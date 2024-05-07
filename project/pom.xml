@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example.project</groupId>
+    <artifactId>project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+    
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.login>admin</sonar.login>
+    <sonar.password>awsqzx12</sonar.password>
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
+        
+    </dependencies>
+
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.8.0.2131</version>
+        </plugin>
+        <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.7.0</version>
+            <configuration>
+                <targetClasses>
+                    <param>com.example.project.*</param>
+                </targetClasses>
+                <targetTests>
+                    <param>com.example.project.BankingSystemTest</param>
+                </targetTests>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+</project>
